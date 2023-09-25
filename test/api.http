@@ -1,0 +1,13 @@
+GET http://localhost:3000/iplist/8.8.8.8
+Content-Type: application/json
+
+###
+GET http://localhost:3000/iplist/cache/8.8.8.8
+Content-Type: application/json
+
+###
+DELETE http://localhost:3000/iplist/8.8.8.8
+Content-Type: application/json
+
+###
+GET http://ipwho.is/8.8.8.8

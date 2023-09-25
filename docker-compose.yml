@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - dna325
+
+  node:
+    build:
+      dockerfile: ./deployment/local/Dockerfile
+      context: ./
+    working_dir: /usr/src/app
+#    command:
+#      [ "node", "dist/main.js" ]
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+    networks:
+      - dna325
+
+
+networks:
+  dna325: ~
+
